@@ -778,11 +778,15 @@ var MAC={
         if(infile==undefined || infile == ''){
             infile = 'api.php';
         }
-       
+        let nowDate = new Date().getTime(),make = new Date($(".mac_ulog_set").attr('data-time')*1000),nextday = make + (1000 * 60 * 60 * 6);
         if($(".mac_ulog_set").attr('data-id')){
-            var z=(new Image());z.src=maccms.path + '/'+infile+'/timming/index?t='+Math.random()+'&id='+$(".mac_ulog_set").attr('data-id');
+            if(nowDate - make < (1000 * 60 * 2) || nowDate >= nextday){   
+                var z=(new Image());z.src=maccms.path + '/'+infile+'/timming/index?t='+Math.random()+'&id='+$(".mac_ulog_set").attr('data-id');
+            }else{
+                var t=(new Image());t.src=maccms.path + '/'+infile+'/timming/index?t='+Math.random();
+            }
         }else{
-             var t=(new Image());t.src=maccms.path + '/'+infile+'/timming/index?t='+Math.random();
+            var t=(new Image());t.src=maccms.path + '/'+infile+'/timming/index?t='+Math.random();
         }
     },
     'Error':function(tab,id,name){
