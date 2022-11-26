@@ -1,3 +1,4 @@
+// 2022年11月27日
 var system = {
     win: false,
     mac: false,
