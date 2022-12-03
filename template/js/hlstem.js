@@ -230,51 +230,51 @@ var conch = {
 		});
 	},
 	// shorturl: function(){
-		// var short = $(".shorturl");
-		// var openapi = $("#openapi").val();
-		// var shareurl = $("#shareurl").val();
-		// if (shareurl=="") {
-		// 	var URL2 = encodeURI(conch.browser.url);
-		// }else{
-        //     var URL2 = shareurl + encodeURI(conch.browser.urlpath);
-		// };		
-		// if (openapi=='sina'){
-		// 	var apiurl = $("#apiurl").val();
-		// 	$.ajax({
-		// 	url: apiurl + URL2,
-		// 	type: "GET",
-		// 	dataType: "jsonp", 
-		// 	cache: false,
-		// 	success: function (data, status) {
-		// 		for(x in data.data.urls[0]) ;
-		// 		short.append( data.data.urls[0].url_short);
-		// 	},
-		// 	error: function(obj,info,errObj){
-		// 		short.append(URL2);
-		// 	},
-		//     });
-		// }else{
-		// 	var Tok = $("#Tok").val();
-		// 	var Term = $("#Term").val();
-		// 	var ajax = new XMLHttpRequest();
-		// 	var token = Tok;
-		// 	var longUrl = URL2;
-		// 	var termOfValidity = Term;
-		// 	ajax.open('post','https://dwz.cn/admin/v2/create', 'true');
-		// 	ajax.setRequestHeader("Content-Type", "application/json");
-		// 	ajax.setRequestHeader("Token", token);
-		// 	ajax.send(JSON.stringify({
-		// 		Url: longUrl,
-		// 		TermOfValidity: termOfValidity
-		// 	}));
-		// 	ajax.onreadystatechange = function () {
-		// 		if (ajax.readyState === 4 && ajax.status === 200) {
-		// 			var obj =JSON.parse(ajax.responseText)
-		// 			console.log(ajax.responseText);
-		// 			if (obj.Code===0){short.append(obj.ShortUrl);}else{short.append(URL2);}
-		// 		}
-		// 	}
-		//  };
+	// 	var short = $(".shorturl");
+	// 	var openapi = $("#openapi").val();
+	// 	var shareurl = $("#shareurl").val();
+	// 	if (shareurl=="") {
+	// 		var URL2 = encodeURI(conch.browser.url);
+	// 	}else{
+    //         var URL2 = shareurl + encodeURI(conch.browser.urlpath);
+	// 	};		
+	// 	if (openapi=='sina'){
+	// 		var apiurl = $("#apiurl").val();
+	// 		$.ajax({
+	// 		url: apiurl + URL2,
+	// 		type: "GET",
+	// 		dataType: "jsonp", 
+	// 		cache: false,
+	// 		success: function (data, status) {
+	// 			for(x in data.data.urls[0]) ;
+	// 			short.append( data.data.urls[0].url_short);
+	// 		},
+	// 		error: function(obj,info,errObj){
+	// 			short.append(URL2);
+	// 		},
+	// 	    });
+	// 	}else{
+	// 		var Tok = $("#Tok").val();
+	// 		var Term = $("#Term").val();
+	// 		var ajax = new XMLHttpRequest();
+	// 		var token = Tok;
+	// 		var longUrl = URL2;
+	// 		var termOfValidity = Term;
+	// 		ajax.open('post','https://dwz.cn/admin/v2/create', 'true');
+	// 		ajax.setRequestHeader("Content-Type", "application/json");
+	// 		ajax.setRequestHeader("Token", token);
+	// 		ajax.send(JSON.stringify({
+	// 			Url: longUrl,
+	// 			TermOfValidity: termOfValidity
+	// 		}));
+	// 		ajax.onreadystatechange = function () {
+	// 			if (ajax.readyState === 4 && ajax.status === 200) {
+	// 				var obj =JSON.parse(ajax.responseText)
+	// 				console.log(ajax.responseText);
+	// 				if (obj.Code===0){short.append(obj.ShortUrl);}else{short.append(URL2);}
+	// 			}
+	// 		}
+	// 	 };
 	// },
 	images: {
 		lazyload: function() {
