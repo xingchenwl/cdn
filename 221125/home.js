@@ -783,8 +783,8 @@ var MAC = {
             MAC.Ajax(maccms.path + '/api.php/ajax/vod/?ac=detail&type=make&ids=' + $(".mac_ulog_set").attr('data-id'), 'get', 'json', '', function (r) {
                 if (r.code == 1) {
                     let vodTime = new Date(r.list[0].vod_time).getTime();
-                    let makeTime = r.list[0].vod_time_make;
-                    if (makeTime == 0 || nowDate - vodTime < (1000 * 60 * 60 * 6)) {
+                    let makeTime = r.list[0].vod_time_make * 1000 ;
+                    if (makeTime == 0 || vodTime > makeTime || nowDate - makeTime > (1000 * 60 * 60 * 24 * 30)) {
                         var z=(new Image());z.src=maccms.path + '/'+infile+'/timming/index?t='+Math.random()+'&id='+$(".mac_ulog_set").attr('data-id');
                         return;
                     }
