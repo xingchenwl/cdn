@@ -1010,7 +1010,7 @@ var Conch = {
             }
             $(".hl-color-item a").click(function () {
                 var $Color = $(this).attr("id");
-                $("link[name='color']").attr("href", $Color === "white" ? "https://vkceyugu.cdn.bspapp.com/VKCEYUGU-fbbc7288-09c6-42ea-9d78-ab19b1795a9a/9a011c43-cffd-4575-9750-7ce780182a6d.css" : "https://vkceyugu.cdn.bspapp.com/VKCEYUGU-fbbc7288-09c6-42ea-9d78-ab19b1795a9a/9ab3798f-3058-46b5-9def-ab3ef9b8fc88.css");
+                $("link[name='color']").attr("href", $Color === "white" ? "https://cdn.jsdelivr.net/gh/xingchenwl/cdn@master/template/tpl/css/white.css" : "https://cdn.jsdelivr.net/gh/xingchenwl/cdn@master/template/tpl/css/black.css");
                 $.cookie("color", $Color, {
                     expires: 365,
                     path: '/'
