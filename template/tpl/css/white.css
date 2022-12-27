@@ -1,19 +1,4 @@
 @charset "UTF-8";
-/*----------------------------------------------------------------------------------------------------------------*/
-
-/* Template Name: Conch Theme*/
-
-/* Version: 1.0 Initial Release*/
-
-/* Build Date: 2020-08-01*/
-
-/* Author Email: 362695000@qq.com*/
-
-/* Website: http://www.conch.vip/
-
-/* Copyright: (C) 2020 */
-
-/*----------------------------------------------------------------------------------------------------------------*/
 body{background:#fff;color:#666;}
 h1,h2,h3,h4,h5,h6{color:#222;}
 input::-webkit-input-placeholder,textarea::-webkit-input-placeholder{color:#ccc;}
