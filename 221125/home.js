@@ -778,23 +778,23 @@ var MAC = {
         if (infile == undefined || infile == '') {
             infile = 'api.php';
         }
-        let nowDate = new Date().getTime(), make = new Date($(".mac_ulog_set").attr('data-time') * 1000), nextday = make + (1000 * 60 * 60 * 6);
-        if ($(".mac_ulog_set").attr('data-id')) {
-            MAC.Ajax(maccms.path + '/api.php/ajax/vod/?ac=detail&type=make&ids=' + $(".mac_ulog_set").attr('data-id'), 'get', 'json', '', function (r) {
-                if (r.code == 1) {
-                    let vodTime = new Date(r.list[0].vod_time).getTime();
-                    let makeTime = r.list[0].vod_time_make * 1000 ;
-                    if (makeTime == 0 || vodTime > makeTime || nowDate - makeTime > (1000 * 60 * 60 * 24 * 30)) {
-                        var z=(new Image());z.src=maccms.path + '/'+infile+'/timming/index?t='+Math.random()+'&id='+$(".mac_ulog_set").attr('data-id');
-                        return;
-                    }
-                    var t = (new Image()); t.src = maccms.path + '/' + infile + '/timming/index?t=' + Math.random();
-                    return;
-                }
-                var t = (new Image()); t.src = maccms.path + '/' + infile + '/timming/index?t=' + Math.random();
-            });
-            return;
-        }
+        // let nowDate = new Date().getTime(), make = new Date($(".mac_ulog_set").attr('data-time') * 1000), nextday = make + (1000 * 60 * 60 * 6);
+        // if ($(".mac_ulog_set").attr('data-id')) {
+        //     MAC.Ajax(maccms.path + '/api.php/ajax/vod/?ac=detail&type=make&ids=' + $(".mac_ulog_set").attr('data-id'), 'get', 'json', '', function (r) {
+        //         if (r.code == 1) {
+        //             let vodTime = new Date(r.list[0].vod_time).getTime();
+        //             let makeTime = r.list[0].vod_time_make * 1000 ;
+        //             if (makeTime == 0 || vodTime > makeTime || nowDate - makeTime > (1000 * 60 * 60 * 24 * 30)) {
+        //                 var z=(new Image());z.src=maccms.path + '/'+infile+'/timming/index?t='+Math.random()+'&id='+$(".mac_ulog_set").attr('data-id');
+        //                 return;
+        //             }
+        //             var t = (new Image()); t.src = maccms.path + '/' + infile + '/timming/index?t=' + Math.random();
+        //             return;
+        //         }
+        //         var t = (new Image()); t.src = maccms.path + '/' + infile + '/timming/index?t=' + Math.random();
+        //     });
+        //     return;
+        // }
         var t = (new Image()); t.src = maccms.path + '/' + infile + '/timming/index?t=' + Math.random();
     },
     'Error': function (tab, id, name) {
