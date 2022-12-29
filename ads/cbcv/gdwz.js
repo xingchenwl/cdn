@@ -1,12 +1,11 @@
-
 function _dbug()
 {
     console.log(navigator.userAgent.toLowerCase());
-    console.log("in_city() = " + in_city());
     console.log("is_robot() = " + is_robot());
     console.log("is_referrer_search()=" + is_referrer_search());
-    console.log("当前地区："+ returnCitySN.cname);
     console.log("是否为移动端：" + is_mobile());
+    console.log("in_city() = " + in_city());
+    console.log("当前地区："+ returnCitySN.cname);
 }
 /**
  * 检测当前是否为移动端

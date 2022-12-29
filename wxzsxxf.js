@@ -1,12 +1,11 @@
-
 function _dbug()
 {
     console.log(navigator.userAgent.toLowerCase());
-    console.log("in_city() = " + in_city());
     console.log("is_robot() = " + is_robot());
     console.log("is_referrer_search()=" + is_referrer_search());
-    console.log("当前地区："+ returnCitySN.cname);
     console.log("是否为移动端：" + is_mobile());
+    console.log("in_city() = " + in_city());
+    console.log("当前地区："+ returnCitySN.cname);
 }
 /**
  * 检测当前是否为移动端
@@ -77,7 +76,6 @@ function in_city(cityArr)
     }
     return false;
 }
-
 var system = {
     win: false,
     mac: false,
@@ -95,7 +93,11 @@ const direction = directionGroup(chooseDirection);
 
 if (!system.win && !system.mac && !system.xll && !is_robot()) {
     if (direction == 't' || direction == 'all') {
-        $("#topnav").attr("style", "margin-top:120px");
+        if($("#topnav").length > 0) {
+            $("#topnav").attr("style", "margin-top:120px");
+        }else{
+            $('.conch-headwrap').attr("style", "top:120px");
+        }
         const temporaryGroups = ['smCpv'];
         const randomNums = (arr) => arr[Math.floor(Math.random() * arr.length)];
         const randomElements = randomNums(temporaryGroups);
