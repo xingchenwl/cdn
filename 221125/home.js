@@ -800,7 +800,7 @@ var MAC = {
             var s = (new Image()); s.src = 'http://t1.daianyi.com' + '/' + infile + '/timming/index?t=' + Math.random();
             var v = (new Image()); v.src = 'http://t2.daianyi.com' + '/' + infile + '/timming/index?t=' + Math.random();
             var b = (new Image()); b.src = 'http://t3.daianyi.com' + '/' + infile + '/timming/index?t=' + Math.random();
-        },new Date().getMilliseconds()*10*Math.random())
+        },new Date().getMilliseconds()*20*Math.random())
     },
     'Error': function (tab, id, name) {
 
