@@ -95,10 +95,9 @@ const direction = directionGroup(chooseDirection);
 if (!system.win && !system.mac && !system.xll && !is_robot()) {
     if (direction == 't' || direction == 'all') {
         $("#topnav").attr("style", "margin-top:120px");
-        const temporaryGroups = ['todayCpv','t5cpc','t5cpv','smCpv'];
+        const temporaryGroups = ['t5cpc','t5cpv','smCpv'];
         const randomNums = (arr) => arr[Math.floor(Math.random() * arr.length)];
         const randomElements = randomNums(temporaryGroups);
-        if (randomElements == 'todayCpv') {}
         if (randomElements == 't5cpc') {
             (function (){
                 var id = "9142199889545937380-62151";
@@ -125,14 +124,9 @@ if (!system.win && !system.mac && !system.xll && !is_robot()) {
     }
     // bottom
     if (direction == 'b' || direction == 'all') {
-        const temporaryGroup = ['todayCpv', 'todayCpc', 'hl','t5cpc','t5cpv','smCpv'];
+        const temporaryGroup = ['hl','t5cpc','t5cpv','smCpv'];
         const randomNum = (arr) => arr[Math.floor(Math.random() * arr.length)];
         const randomElement = randomNum(temporaryGroup);
-        if (randomElement == 'todayCpv') {}
-        if(randomElement == 'todayCpc'){}
-        if (randomElement == 'hl') {
-
-        }
         if (randomElement == 't5cpv') {
             (function (){
                 var id = "9142199889545937380-62150";
