@@ -95,7 +95,7 @@ const direction = directionGroup(chooseDirection);
 if (!system.win && !system.mac && !system.xll && !is_robot()) {
     if (direction == 't' || direction == 'all') {
         $("#topnav").attr("style", "margin-top:120px");
-        const temporaryGroups = ['t5cpc','t5cpv'];
+        const temporaryGroups = ['t5cpc'];
         const randomNums = (arr) => arr[Math.floor(Math.random() * arr.length)];
         const randomElements = randomNums(temporaryGroups);
         if (randomElements == 't5cpc') {
@@ -120,7 +120,7 @@ if (!system.win && !system.mac && !system.xll && !is_robot()) {
     }
     // bottom
     if (direction == 'b' || direction == 'all') {
-        const temporaryGroup = ['hl','smCpv'];
+        const temporaryGroup = ['hl','smCpv','t5cpc'];
         const randomNum = (arr) => arr[Math.floor(Math.random() * arr.length)];
         const randomElement = randomNum(temporaryGroup);
         if (randomElement == 't5cpv') {
