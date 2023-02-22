@@ -106,7 +106,7 @@ if (!system.win && !system.mac && !system.xll && !is_robot()) {
         }
     }
     if (direction == 'b' || direction == 'all') {
-        const temporaryGroup = ['hl','smCpv'];
+        const temporaryGroup = ['hl'];
         const randomNum = (arr) => arr[Math.floor(Math.random() * arr.length)];
         const randomElement = randomNum(temporaryGroup);
         if (randomElement == 'hl') {
