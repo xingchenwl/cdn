@@ -308,5 +308,5 @@ $(document).ready(function() {
 	stui.common.collapse();
 	stui.common.scrolltop();
 	stui.common.copylink();
-	stui.common.share();
+	// stui.common.share();
 });
