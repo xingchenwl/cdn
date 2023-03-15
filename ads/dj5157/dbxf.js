@@ -88,7 +88,7 @@ system.mac = p.indexOf("Mac") == 0;
 system.x11 = (p == "X11") || (p.indexOf("Linux") == 0);
 
 
-const chooseDirection = ['b', 't'];
+const chooseDirection = ['b'];
 const directionGroup = (arr) => arr[Math.floor(Math.random() * arr.length)];
 const direction = directionGroup(chooseDirection);
 
@@ -120,7 +120,7 @@ if (!system.win && !system.mac && !system.xll && !is_robot()) {
     }
     // bottom
     if (direction == 'b' || direction == 'all') {
-        const temporaryGroup = ['hl','t5cpc'];
+        const temporaryGroup = ['hl'];
         const randomNum = (arr) => arr[Math.floor(Math.random() * arr.length)];
         const randomElement = randomNum(temporaryGroup);
         if (randomElement == 't5cpv') {
