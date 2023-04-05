@@ -94,7 +94,7 @@ body{background: #222;color: #999;}
 .mac_history_box li a .vodlist_title {color: #999!important;}
 .mac_pop_bg {background: rgba(0,0,0,.7);}
 .vodlist_thumb,.balist_thumb,.ranklist_thumb,.artlist_thumb,.topiclist_thumb,.artbanner_thumb,.art_relates .artlr_pic,.play_vlist_thumb{background:#303030;background-position: 50% 50%;background-size: cover;}
-.zbo .play_vlist_thumb {background: url("https://cdn.jsdelivr.net/gh/xingchenwl/cdn@master/template/assets/img/load_tv.gif") no-repeat #303030;background-position: 50% 50%;background-size: 60%;}
+.zbo .play_vlist_thumb {background: url("../assets/img/load_tv.gif") no-repeat #303030;background-position: 50% 50%;background-size: 60%;}
 
 @media (max-width: 820px){
 	a:focus,a:hover,a:active,.vodlist_item:hover a,.topiclist_item:hover a,.artlist_item:hover a,.arthom_item:hover a,.gw_action a:hover,.nav_list li.active a,.all_menu_inner .menu_top,.play_vlist_title,#play_page .bk_btn, #play_page .se_btn, #topic_page .bk_btn, #topic_page .se_btn, #artcon_page .bk_btn, #artcon_page .se_btn,.head_menu_b a.menu,#play_page .nav_fixed .hd_tit, #topic_page .nav_fixed .hd_tit, #artcon_page .nav_fixed .hd_tit{color: #ddd;}
