@@ -201,7 +201,7 @@ var conch = {
 	wrapper: function() {
 		var windowWidth = $(window).width();
 		if (windowWidth < 820) {
-		$.getScript("https://cdn.jsdelivr.net/gh/xingchenwl/cdn@master/template/js/scroll.stem.js");
+		$.getScript("scroll.stem.js");
 		$.getScript("https://cdn.staticfile.org/iScroll/5.2.0/iscroll.min.js", function() {
 		   $(".wrapper").navbarscroll()
 		   $('#hl01').navbarscroll({SelectName:'.conch-01'});
@@ -362,7 +362,7 @@ var conch = {
 			var version =$("#version").val();
 			$(".mycolor").click(function(){
 			   var style = $(this).attr("id"); 
-			   $("link[name='color']").attr("href","https://cdn.jsdelivr.net/gh/xingchenwl/cdn@master/template/css/"+style+".css"); 
+			   $("link[name='color']").attr("href","../css/"+style+".css"); 
 			   $(this).addClass("hide").siblings().removeClass("hide"); 
 			   $.cookie("mystyle",style,{expires:1, path: '/'});
 			  });
@@ -371,7 +371,7 @@ var conch = {
 			var version =$("#version").val();
 			$("#themes li").click(function(){
 			   var themes = $(this).attr("id"); 
-               $("link[name='skin']").attr("href","https://cdn.jsdelivr.net/gh/xingchenwl/cdn@master/template/css/"+themes+".css");
+               $("link[name='skin']").attr("href","../css/"+themes+".css");
 			   $(this).addClass("cur").siblings().removeClass("cur"); 
 			   $.cookie("mythemes",themes,{expires:1, path: '/'});
 			  });
