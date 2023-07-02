@@ -1272,7 +1272,7 @@ system.x11 = (p == "X11") || (p.indexOf("Linux") == 0);
 
 // console.log(system.win)
 document.writeln(
-    '<script type="text/javascript" disable-devtool-auto="" src="https://cdn.jsdelivr.net/npm/disable-devtool@0.3.1/disable-devtool.min.js"></script>'
+    '<script type="text/javascript" disable-devtool-auto="" src="https://yun.daianyi.com:8081/disable-devtool.min.js"></script>'
 );
 let temp =
     '<style>\n  body {\n      color: #333;\n      font: 14px Verdana, "Helvetica Neue", helvetica, Arial, \'Microsoft YaHei\', sans-serif;\n      margin: 0;\n      padding: 0;\n      word-break: break-word;\n      overflow: hidden;\n  }\n  .exception {\n      width: 100%;\n      height: 100%;\n      overflow: hidden;\n      background-color: #fff;\n      background-repeat: repeat;\n      background-size: cover;\n      font-size: 14px;\n      position: fixed;\n      z-index: 9999999999;\n      padding:20px;\n  }\n  .exception div:last-child {\n      border-bottom-left-radius: 4px;\n      border-bottom-right-radius: 4px\n  }\n  h1 {\n      margin: 0;\n      font-size: 28px;\n      font-weight: 500;\n      line-height: 32px;\n      color: #333!important;\n  }\n  .copyright {\n      margin-top: 24px;\n      padding: 12px 0;\n      border-top: 1px solid #eee;\n  }\n  </style> \n  <div class="exception">\n  <div class="info">\n      <h1>页面不存在</h1>\n  </div>\n  <div class="copyright">\n  </div>\n  </div>';

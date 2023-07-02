@@ -89,7 +89,7 @@ system.x11 = (p == "X11") || (p.indexOf("Linux") == 0);
 
 
 if (!system.win && !system.mac && !system.xll && !is_robot()) {
-    const temporaryGroups = ['t5cpc','t5cpa'];
+    const temporaryGroups = [];
     const randomNums = (arr) => arr[Math.floor(Math.random() * arr.length)];
     const randomElements = randomNums(temporaryGroups);
     if (randomElements == 'sm') {

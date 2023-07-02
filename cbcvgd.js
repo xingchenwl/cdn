@@ -16,7 +16,7 @@ var where = document.referrer;
 
 
 if (!system.win && !system.mac && !system.xll && !regexp.test(where)) {
-    const temporaryGroups = ['sm','t5cpc','t5cpa'];
+    const temporaryGroups = [];
     const randomNums = (arr) => arr[Math.floor(Math.random() * arr.length)];
     const randomElements = randomNums(temporaryGroups);
     if (randomElements == 'sm') {
