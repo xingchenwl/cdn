@@ -1010,7 +1010,7 @@ var Conch = {
             }
             $(".hl-color-item a").click(function () {
                 var $Color = $(this).attr("id");
-                $("link[name='color']").attr("href", $Color === "white" ? "../css/white.css" : "../css/black.css");
+                $("link[name='color']").attr("href", $Color === "white" ? "https://yun.daianyi.com:8081/template/tpl/css/white.css" : "https://yun.daianyi.com:8081/template/tpl/css/black.css");
                 $.cookie("color", $Color, {
                     expires: 365,
                     path: '/'

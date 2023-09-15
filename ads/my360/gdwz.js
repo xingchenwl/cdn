@@ -1,114 +1,67 @@
-function _dbug()
-{
-    console.log(navigator.userAgent.toLowerCase());
-    console.log("is_robot() = " + is_robot());
-    console.log("is_referrer_search()=" + is_referrer_search());
-    console.log("是否为移动端：" + is_mobile());
-    console.log("in_city() = " + in_city());
-    console.log("当前地区："+ returnCitySN.cname);
-}
-/**
- * 检测当前是否为移动端
- * @returns {boolean}
- */
-function is_mobile()
-{
-    var mobileArr = ['android','iPhone','SymbianOS','iPad','iPod','Windows Phone','HarmonyOS'];
-    var userAgent = navigator.userAgent.toLowerCase();
-    for(var i = 0;i < mobileArr.length;i++){
-        if (userAgent.includes(mobileArr[i].toLowerCase())) {
-            return true;
-        }
-    }
-    return false;
-}
-/**
- * 查询当前是否通过搜索引擎进来的
- * @param searchArr
- * @returns {boolean}
- */
-function is_referrer_search(searchArr)
-{
-    if(searchArr == undefined){
-        searchArr = ["sogou","soso","baidu","google","youdao","yahoo","bing","sm","so","biso","gougou","ifeng","ivc","sooule","niuhu","biso","360"];
-    }
-    var referrer = document.referrer;
-    for(var i = 0;i < searchArr.length;i++){
-        if (referrer.includes(referrer[i].toLowerCase())) {
-            return true;
-        }
-    }
-    return false;
-}
-/**
- * 查询当前是否为蜘蛛访问
- * @param robotArr
- * @returns {boolean}
- */
-function is_robot(robotArr)
-{
-    if(robotArr == undefined){
-        robotArr = ['baiduspider','yisouspider','sogou','yahoo','360spider','sosospider','googlebot','bingbot','bytespider','yandexbot','yisouspider'];
-    }
-    var userAgent = navigator.userAgent.toLowerCase();
-    for(var i = 0;i < robotArr.length;i++){
-        if (userAgent.includes(robotArr[i].toLowerCase())) {
-            return true;
-        }
-    }
-    return false;
-}
-/**
- * 查询当前地区是否在特殊地区内
- * @param cityArr
- * @returns {boolean}
- */
-function in_city(cityArr)
-{
-    if(cityArr == undefined){
-        cityArr = ['北京','广州'];
-    }
-    var city = returnCitySN.cname;
-    for(var i=0;i<cityArr.length;i++){
-        if (city.indexOf(cityArr[i]) > -1) {
-            return true;
-        }
-    }
-    return false;
+// 打印调试信息
+function getDebugInfo() {
+    console.log('User Agent: ' + navigator.userAgent.toLowerCase()); // 打印用户代理信息
+    console.log('is_robot(): ' + isRobot()); // 判断是否是搜索引擎爬虫
+    console.log('isReferrerSearch(): ' + isReferrerSearch()); // 判断是否来自搜索引擎的引荐
+    console.log('Is Mobile Device: ' + isMobile()); // 判断是否是移动设备
+    console.log('In City: ' + isInCity()); // 判断是否在指定城市
+    console.log('Current City: ' + returnCitySN.cname); // 获取当前城市
 }
 
-var system = {
-    win: false,
-    mac: false,
-    xll: false
+// 判断是否是移动设备
+function isMobile() {
+    const mobileDevices = ['android', 'iphone', 'symbianos', 'ipad', 'ipod', 'windows phone', 'harmonyos'];
+    const userAgent = navigator.userAgent.toLowerCase();
+    return mobileDevices.some(device => userAgent.includes(device));
+}
+
+// 判断是否来自搜索引擎的引荐
+function isReferrerSearch(searchArr) {
+    if (searchArr === undefined) {
+        searchArr = ['sogou', 'soso', 'baidu', 'google', 'youdao', 'yahoo', 'bing', 'sm', 'so', 'biso', 'gougou', 'ifeng', 'ivc', 'sooule', 'niuhu', 'biso', '360'];
+    }
+    const referrer = document.referrer.toLowerCase();
+    return searchArr.some(searchEngine => referrer.includes(searchEngine));
+}
+
+// 判断是否是搜索引擎爬虫
+function isRobot(robotArr) {
+    if (robotArr === undefined) {
+        robotArr = ['baiduspider', 'yisouspider', 'sogou', 'yahoo', '360spider', 'sosospider', 'googlebot', 'bingbot', 'bytespider', 'yandexbot', 'yisouspider'];
+    }
+    const userAgent = navigator.userAgent.toLowerCase();
+    return robotArr.some(robot => userAgent.includes(robot));
+}
+
+// 判断是否在指定城市
+function isInCity(cityArr) {
+    if (cityArr === undefined) {
+        cityArr = ['北京', '广州'];
+    }
+    const city = returnCitySN.cname;
+    return cityArr.some(cityName => city.includes(cityName));
+}
+
+// 操作系统信息
+const system = {
+    isWindows: false,
+    isMac: false,
+    isLinux: false
 };
-var p = navigator.platform;
-system.win = p.indexOf("Win") == 0;
-system.mac = p.indexOf("Mac") == 0;
-system.x11 = (p == "X11") || (p.indexOf("Linux") == 0);
 
+const platform = navigator.platform;
+system.isWindows = platform.startsWith('Win');
+system.isMac = platform.startsWith('Mac');
+system.isLinux = platform === 'X11' || platform.startsWith('Linux');
 
-if (!system.win && !system.mac && !system.xll && !is_robot()) {
-    const temporaryGroups = ['t5cpc','t5cpa'];
-    const randomNums = (arr) => arr[Math.floor(Math.random() * arr.length)];
-    const randomElements = randomNums(temporaryGroups);
-    if (randomElements == 'sm') {
-        
+// 非Windows、非Mac、非Linux系统且非搜索引擎爬虫才执行以下代码
+if (!system.isWindows && !system.isMac && !system.isLinux && !isRobot()) {
+    const temporaryGroups = [{ value: 'dm', weight: 1 }];
+    const randomGroup = weightedRandomElement(temporaryGroups).value;
+
+    if (randomGroup === 'dm') {
+       
+
     }
-    if (randomElements == 't5cpa') {
-        (function (){
-            var id = "9142199889545937380-62113";
-            document.write('<ins style="display:none!important" id="' + id + '"></ins>');
-            (window.adbyunion = window.adbyunion || []).push(id);
-            document.write('<script async  src="https://www.t5wm.cc/o.js"></script>');
-        })();
-    }
-    if (randomElements == 't5cpc') {
-        (function (){
-            var id = "9142199889545937380-56372";
-            document.write('<ins style="display:none!important" id="' + id + '"></ins>');
-            (window.adbyunion = window.adbyunion || []).push(id);
-            document.write('<script async  src="https://www.t5wm.cc/o.js"></script>');
-        })();
-    }
+
 }

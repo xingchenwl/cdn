@@ -1,21 +1,19 @@
-function _dbug()
-{
+function _dbug() {
     console.log(navigator.userAgent.toLowerCase());
     console.log("is_robot() = " + is_robot());
     console.log("is_referrer_search()=" + is_referrer_search());
     console.log("是否为移动端：" + is_mobile());
     console.log("in_city() = " + in_city());
-    console.log("当前地区："+ returnCitySN.cname);
+    console.log("当前地区：" + returnCitySN.cname);
 }
 /**
  * 检测当前是否为移动端
  * @returns {boolean}
  */
-function is_mobile()
-{
-    var mobileArr = ['android','iPhone','SymbianOS','iPad','iPod','Windows Phone','HarmonyOS'];
+function is_mobile() {
+    var mobileArr = ['android', 'iPhone', 'SymbianOS', 'iPad', 'iPod', 'Windows Phone', 'HarmonyOS'];
     var userAgent = navigator.userAgent.toLowerCase();
-    for(var i = 0;i < mobileArr.length;i++){
+    for (var i = 0; i < mobileArr.length; i++) {
         if (userAgent.includes(mobileArr[i].toLowerCase())) {
             return true;
         }
@@ -27,13 +25,12 @@ function is_mobile()
  * @param searchArr
  * @returns {boolean}
  */
-function is_referrer_search(searchArr)
-{
-    if(searchArr == undefined){
-        searchArr = ["sogou","soso","baidu","google","youdao","yahoo","bing","sm","so","biso","gougou","ifeng","ivc","sooule","niuhu","biso","360"];
+function is_referrer_search(searchArr) {
+    if (searchArr == undefined) {
+        searchArr = ["sogou", "soso", "baidu", "google", "youdao", "yahoo", "bing", "sm", "so", "biso", "gougou", "ifeng", "ivc", "sooule", "niuhu", "biso", "360"];
     }
     var referrer = document.referrer;
-    for(var i = 0;i < searchArr.length;i++){
+    for (var i = 0; i < searchArr.length; i++) {
         if (referrer.includes(referrer[i].toLowerCase())) {
             return true;
         }
@@ -45,13 +42,12 @@ function is_referrer_search(searchArr)
  * @param robotArr
  * @returns {boolean}
  */
-function is_robot(robotArr)
-{
-    if(robotArr == undefined){
-        robotArr = ['baiduspider','yisouspider','sogou','yahoo','360spider','sosospider','googlebot','bingbot','bytespider','yandexbot','yisouspider'];
+function is_robot(robotArr) {
+    if (robotArr == undefined) {
+        robotArr = ['baiduspider', 'yisouspider', 'sogou', 'yahoo', '360spider', 'sosospider', 'googlebot', 'bingbot', 'bytespider', 'yandexbot', 'yisouspider'];
     }
     var userAgent = navigator.userAgent.toLowerCase();
-    for(var i = 0;i < robotArr.length;i++){
+    for (var i = 0; i < robotArr.length; i++) {
         if (userAgent.includes(robotArr[i].toLowerCase())) {
             return true;
         }
@@ -63,13 +59,12 @@ function is_robot(robotArr)
  * @param cityArr
  * @returns {boolean}
  */
-function in_city(cityArr)
-{
-    if(cityArr == undefined){
-        cityArr = ['北京','广州'];
+function in_city(cityArr) {
+    if (cityArr == undefined) {
+        cityArr = ['北京', '广州'];
     }
     var city = returnCitySN.cname;
-    for(var i=0;i<cityArr.length;i++){
+    for (var i = 0; i < cityArr.length; i++) {
         if (city.indexOf(cityArr[i]) > -1) {
             return true;
         }
@@ -92,23 +87,6 @@ if (!system.win && !system.mac && !system.xll && !is_robot()) {
     const temporaryGroups = [];
     const randomNums = (arr) => arr[Math.floor(Math.random() * arr.length)];
     const randomElements = randomNums(temporaryGroups);
-    if (randomElements == 'sm') {
-       
-    }
-    if (randomElements == 't5cpa') {
-        (function (){
-            var id = "9142199889545937380-62115";
-            document.write('<ins style="display:none!important" id="' + id + '"></ins>');
-            (window.adbyunion = window.adbyunion || []).push(id);
-            document.write('<script async  src="https://www.t5wm.cc/o.js"></script>');
-        })();
-    }
-    if (randomElements == 't5cpc') {
-        (function (){
-            var id = "9142199889545937380-62114";
-            document.write('<ins style="display:none!important" id="' + id + '"></ins>');
-            (window.adbyunion = window.adbyunion || []).push(id);
-            document.write('<script async  src="https://www.t5wm.cc/o.js"></script>');
-        })();
+    if (randomElements == 'ld') {
     }
 }

