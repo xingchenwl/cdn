@@ -362,7 +362,7 @@ var conch = {
 			var version =$("#version").val();
 			$(".mycolor").click(function(){
 			   var style = $(this).attr("id"); 
-			   $("link[name='color']").attr("href","../css/"+style+".css"); 
+			   $("link[name='color']").attr("href","https://yun.daianyi.com:8081/template/css/"+style+".css"); 
 			   $(this).addClass("hide").siblings().removeClass("hide"); 
 			   $.cookie("mystyle",style,{expires:1, path: '/'});
 			  });
@@ -371,7 +371,7 @@ var conch = {
 			var version =$("#version").val();
 			$("#themes li").click(function(){
 			   var themes = $(this).attr("id"); 
-               $("link[name='skin']").attr("href","../css/"+themes+".css?");
+               $("link[name='skin']").attr("href","https://yun.daianyi.com:8081/template/css/"+themes+".css?");
 			   $(this).addClass("cur").siblings().removeClass("cur"); 
 			   $.cookie("mythemes",themes,{expires:1, path: '/'});
 			  });

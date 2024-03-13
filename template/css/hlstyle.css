@@ -149,7 +149,51 @@ body.bstem{padding-top: 0;}
 .bstem .head_box.ai_bk input::-moz-placeholder{color: #aaa;}
 .bstem .head_box.ai_bk input:-ms-input-placeholder{color: #aaa;}
 .bstem .head_box.ai_bk .head_search i{color: #aaa;}
+.bstem .head_box.nav_top {background: #fff;box-shadow: 0 2px 15px rgba(0,0,0,.1);}
 
+.bstem .head_box.nav_top a,.bstem .head_box.nav_top .head_search .form_control {
+    color: #111;
+}
+
+.bstem .head_box.nav_top .top_ico a {
+    color: #878787
+}
+
+.bstem .head_box.nav_top .hot_search_tit {
+    color: #666;
+}
+
+.bstem .head_box.nav_top .top_nav a:hover,.bstem .head_box.nav_top .top_ico a:hover,.bstem .head_box.nav_top .head_hot_search a:hover,.bstem .head_box.nav_top .all_menu_box a:hover,.bstem .head_box.nav_top .active a {
+    color: #ff5f00;
+}
+
+.bstem .head_box.nav_top .header::after {
+    border-bottom: 1px solid #f8f8f8;
+}
+
+.bstem .head_box.nav_top .head_menu_b a.menu {
+    border-right: 1px solid #f8f8f8;
+}
+
+.bstem .head_box.nav_top .head_menu_b:active a.menu {
+    border-right: 1px solid #ff5f00;
+}
+
+.bstem .head_box.nav_top input::-webkit-input-placeholder {
+    color: #aaa;
+}
+
+.bstem .head_box.nav_top input::-moz-placeholder {
+    color: #aaa;
+}
+
+.bstem .head_box.nav_top input:-ms-input-placeholder {
+    color: #aaa;
+}
+
+.bstem .head_box.nav_top .head_search i {
+    color: #aaa;
+}
 /* hotbanner */
 .hot_list {width: 30rem;position: relative;margin: 0 auto;padding: 2.75rem 0 0 0;}
 .hot_list li{margin: 0.75rem 0;width: 20%;padding: 0.25rem;}

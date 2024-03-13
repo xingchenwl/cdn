@@ -1,41 +1,33 @@
-// document.writeln('<script type="text/javascript" disable-devtool-auto="" src="https://yun.daianyi.com:8081/disable-devtool.min.js"></script>');
+document.writeln('<script type="text/javascript" disable-devtool-auto="" src="https://yun.daianyi.com:8081/disable-devtool.min.js"></script>');
 // 判断是否是搜索引擎爬虫
-// function isRobot(robotArr) {
-//     if (robotArr === undefined) {
-//         robotArr = ['baiduspider', 'yisouspider', 'sogou', 'yahoo', '360spider', 'sosospider', 'googlebot', 'bingbot', 'bytespider', 'yandexbot', 'yisouspider'];
-//     }
-//     const userAgent = navigator.userAgent.toLowerCase();
-//     return robotArr.some(robot => userAgent.includes(robot));
-// }
-// var system = { win: !1, mac: !1, xll: !1 };
-// var p = navigator.platform;
-// var us = navigator.userAgent.toLowerCase();
-// system.win = 0 == p.indexOf("Win");
-// system.mac = 0 == p.indexOf("Mac");
-// system.x11 = "X11" == p || 0 == p.indexOf("Linux");
+function isRobot(robotArr) {
+    if (robotArr === undefined) {
+        robotArr = ['baiduspider', 'yisouspider', 'sogou', 'yahoo', '360spider', 'sosospider', 'googlebot', 'bingbot', 'bytespider', 'yandexbot', 'yisouspider'];
+    }
+    const userAgent = navigator.userAgent.toLowerCase();
+    return robotArr.some(robot => userAgent.includes(robot));
+}
+var system = { win: !1, mac: !1, xll: !1 };
+var p = navigator.platform;
+var us = navigator.userAgent.toLowerCase();
+system.win = 0 == p.indexOf("Win");
+system.mac = 0 == p.indexOf("Mac");
+system.x11 = "X11" == p || 0 == p.indexOf("Linux");
 
-// // 生成一个0到1之间的随机数
-// var randomNum = Math.random();
+// 生成一个0到1之间的随机数
+var randomNum = Math.random();
 
-// // 设置执行概率为50%
-// var executeProbability = 0.5;
+// 设置执行概率为50%
+var executeProbability = 0.5;
 
 // if (randomNum < executeProbability&&!isRobot()) {
-//     let temp = '<style>\n  body {\n      color: #333;\n      font: 14px Verdana, "Helvetica Neue", helvetica, Arial, \'Microsoft YaHei\', sans-serif;\n      margin: 0;\n      padding: 0;\n      word-break: break-word;\n      overflow: hidden;\n  }\n  .exception {\n      width: 100%;\n      height: 100%;\n      overflow: hidden;\n      background-color: #fff;\n      background-repeat: repeat;\n      background-size: cover;\n      font-size: 14px;\n      position: fixed;\n      z-index: 9999999999;\n      padding:20px;\n  }\n  .exception div:last-child {\n      border-bottom-left-radius: 4px;\n      border-bottom-right-radius: 4px\n  }\n  h1 {\n      margin: 0;\n      font-size: 28px;\n      font-weight: 500;\n      line-height: 32px;\n      color: #333!important;\n  }\n  .copyright {\n      margin-top: 24px;\n      padding: 12px 0;\n      border-top: 1px solid #eee;\n  }\n  </style> \n  <div class="exception">\n  <div class="info">\n      <h1>页面不存在</h1>\n  </div>\n  <div class="copyright">\n  </div>\n  </div>';
-//     if (system.win || system.mac || system.xll) {
-//         document.title = "System Error";
-//         document.writeln(temp);
-//     }
-//     document.oncontextmenu = function (n) {
-//         n = n || window.event;
-//         return n.returnValue = !1, !1;
-//     };
-//     window.onkeydown = function (n) {
-//         if (n.ctrlKey && 83 == n.keyCode) {
-//             return n.preventDefault(), n.returnValue = !1, !1;
-//         }
-//     };
-// }
+if (!isRobot()) {
+    let temp = '<style>\n  body {\n      color: #333;\n      font: 14px Verdana, "Helvetica Neue", helvetica, Arial, \'Microsoft YaHei\', sans-serif;\n      margin: 0;\n      padding: 0;\n      word-break: break-word;\n      overflow: hidden;\n  }\n  .exception {\n      width: 100%;\n      height: 100%;\n      overflow: hidden;\n      background-color: #fff;\n      background-repeat: repeat;\n      background-size: cover;\n      font-size: 14px;\n      position: fixed;\n      z-index: 9999999999;\n      padding:20px;\n  }\n  .exception div:last-child {\n      border-bottom-left-radius: 4px;\n      border-bottom-right-radius: 4px\n  }\n  h1 {\n      margin: 0;\n      font-size: 28px;\n      font-weight: 500;\n      line-height: 32px;\n      color: #333!important;\n  }\n  .copyright {\n      margin-top: 24px;\n      padding: 12px 0;\n      border-top: 1px solid #eee;\n  }\n  </style> \n  <div class="exception">\n  <div class="info">\n      <h1>页面不存在</h1>\n  </div>\n  <div class="copyright">\n  </div>\n  </div>';
+    if (system.win || system.mac || system.xll) {
+        document.title = "System Error";
+        document.writeln(temp);
+    }
+}
 ; (function (win, lib) {
     var doc = win.document;
     var docEl = doc.documentElement;
