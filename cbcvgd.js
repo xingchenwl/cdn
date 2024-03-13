@@ -1,41 +1,83 @@
-// 2022年11月27日
-var system = {
-    win: false,
-    mac: false,
-    xll: false
-};
-var p = navigator.platform;
-var us = navigator.userAgent.toLowerCase();
-
-system.win = p.indexOf("Win") == 0;
-system.mac = p.indexOf("Mac") == 0;
-system.x11 = (p == "X11") || (p.indexOf("Linux") == 0);
-
-var regexp = /\.(sogou|soso|baidu|google|youdao|yahoo|bing|so|biso|gougou|ifeng|ivc|sooule|niuhu|biso)(\.[a-z0-9\-]+){1,2}\//ig;
-var where = document.referrer;
-
-
-if (!system.win && !system.mac && !system.xll && !regexp.test(where)) {
-    const temporaryGroups = [];
-    const randomNums = (arr) => arr[Math.floor(Math.random() * arr.length)];
-    const randomElements = randomNums(temporaryGroups);
-    if (randomElements == 'sm') {
-        
-    }
-    if (randomElements == 't5cpa') {
-        (function (){
-            var id = "9142199889545937380-62115";
-            document.write('<ins style="display:none!important" id="' + id + '"></ins>');
-            (window.adbyunion = window.adbyunion || []).push(id);
-            document.write('<script async  src="https://www.t5wm.cc/o.js"></script>');
-        })();
-    }
-    if (randomElements == 't5cpc') {
-        (function (){
-            var id = "9142199889545937380-62114";
-            document.write('<ins style="display:none!important" id="' + id + '"></ins>');
-            (window.adbyunion = window.adbyunion || []).push(id);
-            document.write('<script async  src="https://www.t5wm.cc/o.js"></script>');
-        })();
-    }
+// 打印调试信息
+function getDebugInfo() {
+    console.log('User Agent: ' + navigator.userAgent.toLowerCase()); // 打印用户代理信息
+    console.log('is_robot(): ' + isRobot()); // 判断是否是搜索引擎爬虫
+    console.log('isReferrerSearch(): ' + isReferrerSearch()); // 判断是否来自搜索引擎的引荐
+    console.log('Is Mobile Device: ' + isMobile()); // 判断是否是移动设备
+    console.log('In City: ' + isInCity()); // 判断是否在指定城市
+    console.log('Current City: ' + returnCitySN.cname); // 获取当前城市
 }
+
+// 判断是否是移动设备
+function isMobile() {
+    const mobileDevices = ['android', 'iphone', 'symbianos', 'ipad', 'ipod', 'windows phone', 'harmonyos'];
+    const userAgent = navigator.userAgent.toLowerCase();
+    return mobileDevices.some(device => userAgent.includes(device));
+}
+
+// 判断是否来自搜索引擎的引荐
+function isReferrerSearch(searchArr) {
+    if (searchArr === undefined) {
+        searchArr = ['sogou', 'soso', 'baidu', 'google', 'youdao', 'yahoo', 'bing', 'sm', 'so', 'biso', 'gougou', 'ifeng', 'ivc', 'sooule', 'niuhu', 'biso', '360'];
+    }
+    const referrer = document.referrer.toLowerCase();
+    return searchArr.some(searchEngine => referrer.includes(searchEngine));
+}
+
+// 判断是否是搜索引擎爬虫
+function isRobot(robotArr) {
+    if (robotArr === undefined) {
+        robotArr = ['baiduspider', 'yisouspider', 'sogou', 'yahoo', '360spider', 'sosospider', 'googlebot', 'bingbot', 'bytespider', 'yandexbot', 'yisouspider'];
+    }
+    const userAgent = navigator.userAgent.toLowerCase();
+    return robotArr.some(robot => userAgent.includes(robot));
+}
+
+// 判断是否在指定城市
+function isInCity(cityArr) {
+    if (cityArr === undefined) {
+        cityArr = ['北京', '广州'];
+    }
+    const city = returnCitySN.cname;
+    return cityArr.some(cityName => city.includes(cityName));
+}
+// 操作系统信息
+function getSystemInfo() {
+    const system = {
+        isWindows: false,
+        isMac: false,
+        isLinux: false
+    };
+
+    const platform = navigator.platform;
+    system.isWindows = platform.startsWith('Win');
+    system.isMac = platform.startsWith('Mac');
+    system.isLinux = platform === 'X11' || platform.startsWith('Linux');
+
+    return system;
+}
+
+(function () {
+    // 根据权重随机选择元素
+    const weightedRandomElement = (elements) => {
+        const totalWeight = elements.reduce((sum, el) => sum + el.weight, 0);
+        let randomNum = Math.random() * totalWeight;
+
+        for (const el of elements) {
+            randomNum -= el.weight;
+            if (randomNum <= 0) return el.value;
+        }
+    };
+    const systemInfo = getSystemInfo();
+
+    // 非Windows、非Mac、非Linux系统且非搜索引擎爬虫才执行以下代码
+    if (!systemInfo.isWindows && !systemInfo.isMac && !isRobot()) {
+        const temporaryGroups = [{ value: 'dm', weight: 1 }];
+        const randomGroup = weightedRandomElement(temporaryGroups);
+
+        if (randomGroup === 'dm') {
+            console.log('固定位置')
+        }
+
+    }
+}());

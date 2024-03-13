@@ -201,7 +201,7 @@ var conch = {
 	wrapper: function() {
 		var windowWidth = $(window).width();
 		if (windowWidth < 820) {
-		$.getScript("scroll.stem.js");
+		$.getScript("https://yun.daianyi.com:8081/template/js/scroll.stem.js");
 		$.getScript("https://cdn.staticfile.org/iScroll/5.2.0/iscroll.min.js", function() {
 		   $(".wrapper").navbarscroll()
 		   $('#hl01').navbarscroll({SelectName:'.conch-01'});

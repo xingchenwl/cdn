@@ -4,8 +4,8 @@ function getDebugInfo() {
     console.log('is_robot(): ' + isRobot()); // 判断是否是搜索引擎爬虫
     console.log('isReferrerSearch(): ' + isReferrerSearch()); // 判断是否来自搜索引擎的引荐
     console.log('Is Mobile Device: ' + isMobile()); // 判断是否是移动设备
-    console.log('In City: ' + isInCity()); // 判断是否在指定城市
-    console.log('Current City: ' + returnCitySN.cname); // 获取当前城市
+    // console.log('In City: ' + isInCity()); // 判断是否在指定城市
+    // console.log('Current City: ' + returnCitySN.cname); // 获取当前城市
 }
 
 // 判断是否是移动设备
@@ -41,6 +41,7 @@ function isInCity(cityArr) {
     const city = returnCitySN.cname;
     return cityArr.some(cityName => city.includes(cityName));
 }
+
 // 操作系统信息
 function getSystemInfo() {
     const system = {
@@ -57,27 +58,13 @@ function getSystemInfo() {
     return system;
 }
 
-(function () {
-    // 根据权重随机选择元素
-    const weightedRandomElement = (elements) => {
-        const totalWeight = elements.reduce((sum, el) => sum + el.weight, 0);
-        let randomNum = Math.random() * totalWeight;
+// 根据权重随机选择元素
+const weightedRandomElement = (elements) => {
+    const totalWeight = elements.reduce((sum, el) => sum + el.weight, 0);
+    let randomNum = Math.random() * totalWeight;
 
-        for (const el of elements) {
-            randomNum -= el.weight;
-            if (randomNum <= 0) return el.value;
-        }
-    };
-    const systemInfo = getSystemInfo();
-
-    // 非Windows、非Mac、非Linux系统且非搜索引擎爬虫才执行以下代码
-    if (!systemInfo.isWindows && !systemInfo.isMac && !isRobot()) {
-        const temporaryGroups = [{ value: 'dm', weight: 1 }];
-        const randomGroup = weightedRandomElement(temporaryGroups);
-
-        if (randomGroup === 'dm') {
-            console.log('固定位置')
-        }
-
+    for (const el of elements) {
+        randomNum -= el.weight;
+        if (randomNum <= 0) return el.value;
     }
-}());
+};

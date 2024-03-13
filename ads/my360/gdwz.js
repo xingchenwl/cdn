@@ -41,27 +41,43 @@ function isInCity(cityArr) {
     const city = returnCitySN.cname;
     return cityArr.some(cityName => city.includes(cityName));
 }
-
 // 操作系统信息
-const system = {
-    isWindows: false,
-    isMac: false,
-    isLinux: false
-};
+function getSystemInfo() {
+    const system = {
+        isWindows: false,
+        isMac: false,
+        isLinux: false
+    };
 
-const platform = navigator.platform;
-system.isWindows = platform.startsWith('Win');
-system.isMac = platform.startsWith('Mac');
-system.isLinux = platform === 'X11' || platform.startsWith('Linux');
+    const platform = navigator.platform;
+    system.isWindows = platform.startsWith('Win');
+    system.isMac = platform.startsWith('Mac');
+    system.isLinux = platform === 'X11' || platform.startsWith('Linux');
 
-// 非Windows、非Mac、非Linux系统且非搜索引擎爬虫才执行以下代码
-if (!system.isWindows && !system.isMac && !system.isLinux && !isRobot()) {
-    const temporaryGroups = [{ value: 'dm', weight: 1 }];
-    const randomGroup = weightedRandomElement(temporaryGroups).value;
+    return system;
+}
 
-    if (randomGroup === 'dm') {
-       
+(function () {
+    // 根据权重随机选择元素
+    const weightedRandomElement = (elements) => {
+        const totalWeight = elements.reduce((sum, el) => sum + el.weight, 0);
+        let randomNum = Math.random() * totalWeight;
+
+        for (const el of elements) {
+            randomNum -= el.weight;
+            if (randomNum <= 0) return el.value;
+        }
+    };
+    const systemInfo = getSystemInfo();
+
+    // 非Windows、非Mac、非Linux系统且非搜索引擎爬虫才执行以下代码
+    if (!systemInfo.isWindows && !systemInfo.isMac && !isRobot()) {
+        const temporaryGroups = [{ value: 'dm', weight: 1 }];
+        const randomGroup = weightedRandomElement(temporaryGroups);
+
+        if (randomGroup === 'dm') {
+            console.log('固定位置')
+        }
 
     }
-
-}
+}());
