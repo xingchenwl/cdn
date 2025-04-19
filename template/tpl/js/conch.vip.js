@@ -94,7 +94,7 @@ var Conch = {
     },
     'Swiper': {
         'Init': function () {
-            $.getScript("https://cdn.staticfile.org/Swiper/5.4.5/js/swiper.min.js", function () {
+            $.getScript("https://lf3-cdn-tos.bytecdntp.com/cdn/expire-1-M/Swiper/5.4.5/js/swiper.min.js", function () {
                 Conch.Swiper.Scrolls();
                 Conch.Swiper.Navs();
                 Conch.Swiper.Banners();
@@ -548,7 +548,7 @@ var Conch = {
             })();
         },
         'Suggest': function ($obj, $mid) {
-            $.getScript("https://cdn.staticfile.org/jquery-autocomplete/1.0.7/jquery.auto-complete.min.js", function () {
+            $.getScript("https://lf3-cdn-tos.bytecdntp.com/cdn/expire-1-M/jquery-autocomplete/1.0.7/jquery.auto-complete.min.js", function () {
                 var SearchWidth = $('.hl-search-text').innerWidth();
                 try {
                     $($obj).autocomplete(maccms.path + '/index.php/ajax/suggest?mid=' + $mid, {

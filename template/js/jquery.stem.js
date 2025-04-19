@@ -47,7 +47,7 @@ var conch = {
 		}
 	},
 	swiper: function() {
-		$.getScript("https://cdn.staticfile.org/Swiper/3.4.2/js/swiper.jquery.min.js", function() {
+		$.getScript("https://lf3-cdn-tos.bytecdntp.com/cdn/expire-1-M/Swiper/3.4.2/js/swiper.jquery.min.js", function() {
 				var swiper = new Swiper('.banner-top', {
 					autoplay: 5000,
 					autoplayDisableOnInteraction : false,
@@ -202,7 +202,7 @@ var conch = {
 		var windowWidth = $(window).width();
 		if (windowWidth < 820) {
 		$.getScript("https://yun.daianyi.com:8081/template/js/scroll.stem.js");
-		$.getScript("https://cdn.staticfile.org/iScroll/5.2.0/iscroll.min.js", function() {
+		$.getScript("https://lf3-cdn-tos.bytecdntp.com/cdn/expire-1-M/iScroll/5.2.0/iscroll.min.js", function() {
 		   $(".wrapper").navbarscroll()
 		   $('#hl01').navbarscroll({SelectName:'.conch-01'});
 		   $('#hl02').navbarscroll({SelectName:'.conch-02'});
@@ -278,7 +278,7 @@ var conch = {
 	// },
 	images: {
 		lazyload: function() {
-			$.getScript("https://cdn.staticfile.org/jquery.lazyload/1.9.1/jquery.lazyload.min.js", function() {
+			$.getScript("https://lf3-cdn-tos.bytecdntp.com/cdn/expire-1-M/jquery.lazyload/1.9.1/jquery.lazyload.min.js", function() {
 				$(".lazyload").lazyload({
 					effect: "fadeIn",
 					threshold: 200,
@@ -298,7 +298,7 @@ var conch = {
 			})
 		},
 		qrcode: function() {
-			$.getScript("https://cdn.staticfile.org/jquery.qrcode/1.0/jquery.qrcode.min.js", function() {
+			$.getScript("https://lf3-cdn-tos.bytecdntp.com/cdn/expire-1-M/jquery.qrcode/1.0/jquery.qrcode.min.js", function() {
 				$(".cans").qrcode({
 					width:120,
 					height:120,
@@ -329,7 +329,7 @@ var conch = {
 		});
 	},
 	copy: function() {
-		$.getScript("https://cdn.staticfile.org/clipboard.js/1.7.1/clipboard.min.js", function() {
+		$.getScript("https://lf3-cdn-tos.bytecdntp.com/cdn/expire-1-M/clipboard.js/1.7.1/clipboard.min.js", function() {
 			var btn=document.getElementsByClassName('copy_btn');
 			var clipboard=new Clipboard(btn);
 			clipboard.on('success', function(e){
